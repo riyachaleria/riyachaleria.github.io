@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riya | Backend Developer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0D1321',
+                        primary: '#F0EBD8',
+                        secondary: '#8a9ba8',
+                        accent: '#3E5C76',
+                        accentHover: '#536B78',
+                    },
+                    fontFamily: {
+                        main: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-bg text-primary font-main leading-relaxed overflow-x-hidden w-full">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#0D1321]/40 backdrop-blur-md border-b border-white/5 shadow-lg flex flex-col md:flex-row justify-between items-center py-4 px-6 md:px-12 gap-4 md:gap-0">
+        <div class="font-main font-extrabold text-lg text-bg bg-primary w-12 h-12 rounded-full flex items-center justify-center tracking-tighter shrink-0 shadow-[0_0_15px_rgba(240,235,216,0.2)]">RC</div>
+        <div class="flex flex-wrap justify-center items-center gap-2 md:gap-8">
+            <a href="#about" class="text-primary hover:text-accent transition-colors font-mono text-sm md:text-sm">About</a>
+            <a href="#experience" class="text-primary hover:text-accent transition-colors font-mono text-sm md:text-sm">Experience</a>
+            <a href="#projects" class="text-primary hover:text-accent transition-colors font-mono text-sm md:text-sm">Projects</a>
+            <a href="#skills" class="text-primary hover:text-accent transition-colors font-mono text-sm md:text-sm">Skills</a>
+            <a href="#contact" class="text-primary hover:text-accent transition-colors font-mono text-sm md:text-sm">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-[460px] md:min-h-[580px] lg:min-h-[580px] flex items-center px-6 md:px-12 max-w-7xl mx-auto relative pt-12 md:pt-16 lg:pt-16 pb-12">
+        <div id="about" class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full relative z-10 text-left scroll-mt-[135px] md:scroll-mt-32 lg:scroll-mt-[110px]">
+            <div>
+                <p class="font-mono text-accent text-sm md:text-base mb-4">Hi, my name is</p>
+                <h1 class="font-main font-extrabold text-4xl md:text-6xl text-primary mb-2 md:mb-4 tracking-tight leading-tight">Riya Chaleria.</h1>
+                <h2 class="font-main font-semibold text-xl md:text-3xl text-secondary mb-6 tracking-tight">I build high-performance backend systems.</h2>
+                <p class="text-secondary text-base md:text-lg max-w-full lg:max-w-xl mb-8 leading-relaxed">
+                    Backend & Database Developer specializing in Python, FastAPI, and PostgreSQL. I build secure, production-grade APIs with JWT authentication, containerize with Docker, and own CI/CD pipelines end-to-end.
+                </p>
+                <div class="flex flex-col sm:flex-row items-start justify-start gap-6">
+                    <a href="#contact" class="inline-block bg-accent text-primary py-3 px-8 rounded-md font-mono text-sm transition-all hover:bg-accentHover shadow-lg">Let's Connect</a>
+                    <div class="flex gap-6 text-xl text-secondary">
+                        <a href="https://github.com/riyachaleria" target="_blank" title="GitHub Profile" class="hover:text-accent transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/riya-chaleria-1b8712248/" target="_blank" title="LinkedIn Profile" class="hover:text-accent transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="Riya_Chaleria_Resume.pdf" target="_blank" title="View Resume" class="hover:text-accent transition-colors"><i class="fa-solid fa-file-lines"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-start lg:justify-end">
+                <div class="border border-accent/30 rounded-lg w-full max-w-[500px] lg:max-w-[450px] shadow-[0_20px_40px_-10px_rgba(2,12,27,0.8)] overflow-hidden bg-[#0D1321] text-left">
+                    <div class="bg-accent/10 px-4 py-3 flex items-center border-b border-accent/20">
+                        <span class="mx-auto font-mono text-xs text-secondary">main.py</span>
+                    </div>
+                    <pre class="m-0 p-6 overflow-x-auto whitespace-pre-wrap break-words text-sm font-mono text-primary leading-relaxed text-left"><code><span class="text-pink-400">from</span> fastapi <span class="text-pink-400">import</span> FastAPI
+<span class="text-pink-400">from</span> system <span class="text-pink-400">import</span> Architect
+
+app = FastAPI()
+riya = Architect(
+    role=<span class="text-green-300">"Backend Developer"</span>,
+    stack=[<span class="text-green-300">"Python"</span>, <span class="text-green-300">"Postgres"</span>, <span class="text-green-300">"Docker"</span>]
+)
+
+<span class="text-blue-300">@app.get</span>(<span class="text-green-300">"/status"</span>)
+<span class="text-pink-400">async def</span> <span class="text-blue-300">system_status</span>():
+    <span class="text-pink-400">if</span> riya.is_coding():
+        <span class="text-pink-400">return</span> {<span class="text-green-300">"status"</span>: <span class="text-green-300">"Building infrastructure"</span>}
+    <span class="text-pink-400">return</span> {<span class="text-green-300">"status"</span>: <span class="text-green-300">"Deploying..."</span>}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-12 md:py-16 relative max-w-7xl mx-auto px-6 md:px-12 scroll-mt-24" id="experience">
+        <h2 class="flex items-center text-xl md:text-2xl font-bold text-primary mb-10 sm:whitespace-nowrap after:content-[''] after:block after:h-[1px] after:bg-white/10 after:w-full after:ml-6">Professional Experience</h2>
+        <div class="w-full">
+            <div class="project-card bg-bg/60 border border-white/5 rounded-2xl p-6 md:p-12 flex flex-col h-full relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <p class="font-mono text-secondary text-sm mb-2 flex items-center">
+                        <span class="live-ping mr-2"></span>
+                        <span class="text-accent">April 2026 — Present</span>
+                        <span class="mx-2">|</span> Bengaluru, Karnataka
+                    </p>
+                    <h3 class="text-xl md:text-2xl text-primary mb-6 font-bold">Backend Engineer Intern <span class="text-accent">@ Yashas AI</span></h3>
+                    <p class="text-secondary text-sm md:text-base mb-6 leading-relaxed">Acting as Lead Backend Engineer, designing a highly relational PostgreSQL database architecture and integrating Supabase for robust authentication. Leading backend development for extensive platform features including video progress tracking, live courses, interactive dashboards, and secure payment gateways.</p>
+                    <ul class="flex flex-wrap gap-3 list-none mt-auto mb-8 p-0">
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Python</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">FastAPI</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Alembic</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Supabase</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Google SMTP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-12 md:py-16 relative max-w-7xl mx-auto px-6 md:px-12 scroll-mt-24" id="projects">
+        <h2 class="flex items-center text-xl md:text-2xl font-bold text-primary mb-10 sm:whitespace-nowrap after:content-[''] after:block after:h-[1px] after:bg-white/10 after:w-full after:ml-6">Engineered Architecture</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <!-- Project 1 (Featured) -->
+            <div class="project-card lg:col-span-2 bg-bg/60 border border-white/5 rounded-2xl p-6 md:p-12 flex flex-col h-full relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <p class="font-mono text-accent text-xs md:text-sm mb-2">High-Concurrency Engine</p>
+                    <h3 class="text-xl md:text-2xl text-primary mb-4 font-bold">BidBazaar (FastAPI Auction Engine)</h3>
+                    <p class="text-secondary text-sm md:text-base mb-6 leading-relaxed">A highly concurrent real-time auction engine architected for zero-latency live bidding. Engineered with FastAPI and WebSockets for real-time bid broadcasting, APScheduler for autonomous state resolution, and robust Payment Gateway integration for secure transaction processing. Designed to effortlessly scale and securely process thousands of simultaneous high-frequency bids without bottlenecks.</p>
+                    <ul class="flex flex-wrap gap-3 list-none mt-auto mb-8 p-0">
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Python</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">FastAPI</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">PostgreSQL</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">JWT Authentication</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">WebSockets</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Docker</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Payment Gateway</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Brevo</li>
+                    </ul>
+                    <div class="relative z-10 mt-[5px]">
+                        <a href="https://github.com/riyachaleria/fastapi-auction-engine" target="_blank" class="text-primary font-mono text-sm font-semibold hover:text-accent transition-colors flex items-center gap-2">View Code <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card bg-bg/60 border border-white/5 rounded-2xl p-6 md:p-10 flex flex-col h-full relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <p class="font-mono text-accent text-xs md:text-sm mb-2">Asynchronous API</p>
+                    <h3 class="text-xl md:text-2xl text-primary mb-4 font-bold">WhatsApp Message Queue API</h3>
+                    <p class="text-secondary text-sm md:text-base mb-6 leading-relaxed">A decoupled microservice designed to ingest, process, and track massive volumes of WhatsApp payloads, utilizing a robust queuing architecture to guarantee delivery under high throughput.</p>
+                    <ul class="flex flex-wrap gap-3 list-none mt-auto mb-8 p-0">
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Python</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">PostgreSQL</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Flask</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">API Design</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Docker</li>
+                    </ul>
+                    <div class="relative z-10">
+                        <a href="https://github.com/riyachaleria/WhatsApp-Message-Queue-API" target="_blank" class="text-primary font-mono text-sm font-semibold hover:text-accent transition-colors flex items-center gap-2">View Code <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card bg-bg/60 border border-white/5 rounded-2xl p-6 md:p-10 flex flex-col h-full relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <p class="font-mono text-accent text-xs md:text-sm mb-2">Algorithm Simulation</p>
+                    <h3 class="text-xl md:text-2xl text-primary mb-4 font-bold">Service Desk Simulation</h3>
+                    <p class="text-secondary text-sm md:text-base mb-6 leading-relaxed">A low-level algorithmic model written in C that simulates live queue dynamics. It calculates efficiency metrics and mathematically visualizes customer flow through a First-Come-First-Served logic.</p>
+                    <ul class="flex flex-wrap gap-3 list-none mt-auto mb-8 p-0">
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">C</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Data Structures</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Algorithms</li>
+                    </ul>
+                    <div class="relative z-10">
+                        <a href="https://github.com/riyachaleria/service-desk-simulation" target="_blank" class="text-primary font-mono text-sm font-semibold hover:text-accent transition-colors flex items-center gap-2">View Code <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card bg-bg/60 border border-white/5 rounded-2xl p-6 md:p-10 flex flex-col h-full relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <p class="font-mono text-accent text-xs md:text-sm mb-2">Terminal Application</p>
+                    <h3 class="text-xl md:text-2xl text-primary mb-4 font-bold">To-Do List Manager</h3>
+                    <p class="text-secondary text-sm md:text-base mb-6 leading-relaxed">A secure terminal-based task management system leveraging raw binary file persistence, custom authentication hashing, and strict dynamic memory allocation to prevent memory leaks.</p>
+                    <ul class="flex flex-wrap gap-3 list-none mt-auto mb-8 p-0">
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">C</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Memory Management</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">File I/O</li>
+                    </ul>
+                    <div class="relative z-10">
+                        <a href="https://github.com/riyachaleria/todo-list-manager-c" target="_blank" class="text-primary font-mono text-sm font-semibold hover:text-accent transition-colors flex items-center gap-2">View Code <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card bg-bg/60 border border-white/5 rounded-2xl p-6 md:p-10 flex flex-col h-full relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <p class="font-mono text-accent text-xs md:text-sm mb-2">Game Engine Logic</p>
+                    <h3 class="text-xl md:text-2xl text-primary mb-4 font-bold">Tic Tac Toe Saga</h3>
+                    <p class="text-secondary text-sm md:text-base mb-6 leading-relaxed">A foundational project featuring a custom-built AI opponent, state-saving for historical replays, and recursive game logic, completely rendered within the command line.</p>
+                    <ul class="flex flex-wrap gap-3 list-none mt-auto mb-8 p-0">
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">C</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Game Logic</li>
+                        <li class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Basic AI</li>
+                    </ul>
+                    <div class="mt-auto relative z-10">
+                        <a href="https://github.com/riyachaleria/tic-tac-toe-saga" target="_blank" class="text-primary font-mono text-sm font-semibold hover:text-accent transition-colors flex items-center gap-2">View Code <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-12 md:py-16 relative max-w-7xl mx-auto px-6 md:px-12 scroll-mt-24" id="skills">
+        <h2 class="flex items-center text-xl md:text-2xl font-bold text-primary mb-10 sm:whitespace-nowrap after:content-[''] after:block after:h-[1px] after:bg-white/10 after:w-full after:ml-6">Core Competencies</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="skill-card bg-bg/60 border border-white/5 rounded-2xl p-6 flex flex-col relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="fa-solid fa-code text-accent text-2xl"></i>
+                        <h3 class="text-lg font-bold text-primary">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Python</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">C</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">C++</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">SQL</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">HTML</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card bg-bg/60 border border-white/5 rounded-2xl p-6 flex flex-col relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="fa-solid fa-database text-accent text-2xl"></i>
+                        <h3 class="text-lg font-bold text-primary">Databases</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">PostgreSQL</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">SQLite</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">SQLAlchemy</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Alembic</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Supabase</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card bg-bg/60 border border-white/5 rounded-2xl p-6 flex flex-col relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="fa-solid fa-infinity text-accent text-2xl"></i>
+                        <h3 class="text-lg font-bold text-primary">DevOps & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Docker</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Kubernetes</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Red Hat OpenShift</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">CI/CD</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Git</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Pytest</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card bg-bg/60 border border-white/5 rounded-2xl p-6 flex flex-col relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)]">
+                <div class="relative z-10 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="fa-solid fa-network-wired text-accent text-2xl"></i>
+                        <h3 class="text-lg font-bold text-primary">Architecture</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-auto">
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">FastAPI</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">Flask</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">REST APIs</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">JWT Auth</span>
+                        <span class="text-secondary px-3 py-1.5 rounded-full text-xs border border-accent/30 font-mono transition-colors hover:text-primary hover:border-accent hover:bg-accent/10">WebSockets</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="pt-[13px] pb-12 md:pt-[21px] md:pb-16 max-w-6xl mx-auto px-6 md:px-12 scroll-mt-20" id="contact">
+        <!-- Subtle Top Gradient Separator Line -->
+        <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent mb-[62px] md:mb-[78px]"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <!-- Left Column: Heading, Status, Social Links -->
+            <div class="text-left">
+                <!-- Availability Badge -->
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-accent/30 bg-accent/5 font-mono text-xs text-secondary mb-6 shadow-sm">
+                    <span class="live-ping"></span>
+                    <span class="text-accent font-semibold">Open to Work</span>
+                </div>
+
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Initialize Handshake</h2>
+                
+                <p class="text-secondary text-base md:text-lg mb-8 leading-relaxed font-mono">
+                    Currently open to full-time backend engineering roles.
+                </p>
+
+                <!-- What I bring -->
+                <div class="flex flex-col gap-3 font-mono text-sm text-secondary">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-accent text-xs w-4"></i>
+                        <span>Backend systems that scale under pressure</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-accent text-xs w-4"></i>
+                        <span>Production-grade APIs with real deployment experience</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-accent text-xs w-4"></i>
+                        <span>FastAPI · PostgreSQL · Docker · CI/CD pipeline ownership</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-accent text-xs w-4"></i>
+                        <span>Payment gateway integration &amp; WebSocket infrastructure</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-accent text-xs w-4"></i>
+                        <span>JWT authentication &amp; secure API design</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-accent text-xs w-4"></i>
+                        <span>Test automation &amp; code coverage analysis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Contact Card -->
+            <div class="project-card bg-bg/60 border border-white/5 rounded-2xl p-8 md:p-10 flex flex-col justify-between relative overflow-hidden transition-all duration-400 hover:border-white/10 hover:shadow-[0_4px_30px_-2px_rgba(0,0,0,0.5),0_0_4px_rgba(62,92,118,0.2)] h-full min-h-[360px]">
+                <div class="relative z-10">
+                    <p class="font-mono text-xs text-secondary mb-2 flex items-center gap-2">
+                        <i class="fa-regular fa-envelope text-accent"></i> Direct Communication Channel
+                    </p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-primary mb-4">Let's build scalable architecture together.</h3>
+                    <p class="text-secondary text-sm md:text-base leading-relaxed mb-8">
+                        Whether you are scaling distributed infrastructure, looking for a dedicated backend engineer, or want to discuss technical collaborations, drop me a message directly.
+                    </p>
+
+                    <!-- Prominent Email Display -->
+                    <div class="bg-[#0D1321] border border-accent/30 rounded-xl p-4 md:p-5 mb-8 flex items-center justify-between font-mono text-sm md:text-base text-primary shadow-inner">
+                        <span class="truncate mr-2">riyachaleria@gmail.com</span>
+                        <span class="text-xs bg-accent/10 text-accent px-2.5 py-1 rounded border border-accent/20 flex-shrink-0">PRIMARY</span>
+                    </div>
+                </div>
+
+                <div class="relative z-10">
+                    <a href="https://mail.google.com/mail/u/0/?fs=1&to=riyachaleria@gmail.com&tf=cm" target="_blank" class="group inline-flex items-center justify-center gap-3 py-4 px-8 rounded-md font-mono text-sm bg-accent text-primary transition-all duration-300 hover:bg-accentHover shadow-lg w-full">
+                        <span>Say Hello</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-accent/20 font-mono text-sm text-secondary flex flex-col items-center gap-4 mt-auto">
+        <p>&copy; 2026 Riya Chaleria. All rights reserved.</p>
+        <div class="flex gap-4 text-xl">
+            <a href="https://github.com/riyachaleria" target="_blank" title="GitHub Profile" class="hover:text-accent transition-colors"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/riya-chaleria-1b8712248/" target="_blank" title="LinkedIn Profile" class="hover:text-accent transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

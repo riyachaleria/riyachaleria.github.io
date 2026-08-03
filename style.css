@@ -1,0 +1,81 @@
+/* 
+   Tailwind CSS is now handling all layout, grids, padding, and responsive design.
+   This file only retains highly custom visual effects (JS Glow & CSS Animations).
+*/
+
+:root {
+    --bg-color: #0D1321;
+    --text-primary: #F0EBD8;
+    --text-secondary: #8a9ba8;
+    --accent-color: #3E5C76;
+    --accent-hover: #536B78;
+    
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+/* JS Radial Hover Glow (Driven by script.js) */
+.project-card::after, .skill-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(62, 92, 118, 0.15), transparent 40%);
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 1rem; /* matches Tailwind rounded-2xl */
+}
+
+.project-card:hover::after, .skill-card:hover::after {
+    opacity: 1;
+}
+
+/* Live Ping Animation */
+.live-ping {
+    position: relative;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.live-ping::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+    75%, 100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+/* Scroll Animations — named scroll-hidden/scroll-visible to avoid Tailwind's hidden (display:none) conflict */
+.scroll-hidden {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dedicated Block for iPhone SE & Smaller Mobile Screens */
+@media screen and (max-width: 385px), screen and (max-height: 700px) {
+    #about {
+        scroll-margin-top: 170px !important;
+    }
+}
